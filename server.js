@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const sgMail = require('@sendgrid/mail');
 const bodyParser = require('body-parser');
-const port = 3010
+const port = process.env.PORT || 3010 
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(cors({ origin: true }));
 
 app.post('/', (req, res) => {
 
-  sgMail.setApiKey('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');
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 
   const msg = {
