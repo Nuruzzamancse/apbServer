@@ -20,6 +20,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
  app.use(bodyParser.json())
 
 app.use(cors({ origin: true }));
+app.get('/', (req, res) => {
+  res.json("Server is working");
+});
 
 app.post('/', (req, res) => {
 
