@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
  app.use(bodyParser.json())
 
 app.use(cors({ origin: true }));
-app.get('/', (req, res) => {
+app.get('/api/', (req, res) => {
   res.json("Server is working");
 });
 
@@ -43,7 +43,7 @@ app.post('/', (req, res) => {
 
 });
 
-app.get('/:id', (req, res) => {
+app.get('/api/:id', (req, res) => {
   const userId = req.params.id;
   admin.auth().deleteUser(userId)
   .then((user) =>{
