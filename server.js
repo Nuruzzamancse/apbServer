@@ -43,15 +43,15 @@ app.post('/', (req, res) => {
 
 });
 
-app.get('/api/:id', (req, res) => {
-  const userId = req.params.id;
-  admin.auth().deleteUser(userId)
-  .then((user) =>{
-    res.json({success: true, message: `User deleted successfully`})
-  })
-  .catch((error) =>{
-    res.status(400).json({success: false, message: 'Can not delete user'})
-  });
-});
+// app.get('/api/:id', (req, res) => {
+//   const userId = req.params.id;
+//   admin.auth().deleteUser(userId)
+//   .then((user) =>{
+//     res.json({success: true, message: `User deleted successfully`})
+//   })
+//   .catch((error) =>{
+//     res.status(400).json({success: false, message: 'Can not delete user'})
+//   });
+// });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
